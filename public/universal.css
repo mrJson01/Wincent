@@ -35,9 +35,31 @@ h2{
 
 .round-button{
     display:block;
-    padding:8.5px;
+    padding:8.5px!important;
     border-radius:10px;
     border:solid 3.5px whitesmoke;
+}
+
+.reset-list{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+.reset-list>li{
+    margin:0;
+    padding:0;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-space-between{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
 }
 
 
@@ -47,58 +69,22 @@ h2{
 header{
     background-color:black;
     color:white;
-    padding:7.5px 0;
+    padding:7.5px 10px;
     width:100%;
     display:flex;
     flex-flow:row wrap;
-}
-
-header a:nth-of-type(1){
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-header a:nth-of-type(1) h1{
-    align-self:center;
-    padding-left:15px;
-}
-
-header img{
-    padding-left:10px;
+    box-sizing:border-box;
 }
 
 
 header .left{
     margin-left:20px;
-    display:flex;
-    justify-content: center;
-    align-content: center;
 }
 
-header .right{
-    display: flex;
-    margin-left:auto;
-    margin-right:20px;
-    justify-content: center;
-    
-}
-
-header .left ul,
-header .right ul
-{
-    list-style-type:none;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-flow:row;
-    justify-content:space-between;
-    align-items: center;
-}
+header .right{ margin-left:auto; }
 
 header .left ul>li,
 header .right ul>li{
-    display:inline-block;
     margin:0px 8px;
 }
 
@@ -122,26 +108,13 @@ footer .footer-inner{
 }
 
 
-footer .footer-inner .footer-inner-block{
-    display: flex;
-    flex-flow:row wrap;
-    justify-content: space-between;
-}
+footer .footer-inner .footer-inner-block{align-items:flex-start;}
 
 footer .footer-inner .footer-inner-block .footer-flex-item{
     margin:20px 0px;
 }
 
-footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul ul{
-    list-style-type:none;
-    padding:0;
-    margin:0;
-}
-
-footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul ul>li{
-    padding:0;
-    margin:5px 0px;
-}
+footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul ul>li{margin:5px 0px;}
 
 footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul img{
     width:30px;
