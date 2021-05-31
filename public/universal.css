@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Nunito:wght@700&family=ZCOOL+KuaiLe&display=swap');
+
+body{
+    padding:0!important;
+    margin:0!important;
+    font-family:'Nunito',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    min-height:100vh;
+}
+
+a
+{
+    color:white;
+    text-decoration: none;
+}
+
+h1{
+    font-family:'ZCOOL KuaiLe', cursive;
+    margin:0px;
+    font-size:28px;
+    color:#ffa636;
+}
+
+h2{
+    font-family:'Chakra Petch', sans-serif;
+    font-weight:700;
+}
+
+/*      CLASSES   !!!!!!!*/
+
+.cursor:hover{
+    cursor:pointer;
+}
+
+.round-button{
+    display:block;
+    padding:8.5px;
+    border-radius:10px;
+    border:solid 3.5px whitesmoke;
+}
+
+
+
+/*      Top-menu     */
+
+header{
+    background-color:black;
+    color:white;
+    padding:7.5px 0;
+    width:100%;
+    display:flex;
+    flex-flow:row wrap;
+}
+
+header a:nth-of-type(1){
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header a:nth-of-type(1) h1{
+    align-self:center;
+    padding-left:15px;
+}
+
+header img{
+    padding-left:10px;
+}
+
+
+header .left{
+    margin-left:20px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header .right{
+    display: flex;
+    margin-left:auto;
+    margin-right:20px;
+    justify-content: center;
+    
+}
+
+header .left ul,
+header .right ul
+{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-flow:row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+header .left ul>li,
+header .right ul>li{
+    display:inline-block;
+    margin:0px 8px;
+}
+
+/*       FOOTER     */
+
+footer{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    background-color:black;
+    color:white;
+    padding:35px 0;
+    margin-top:100px;
+}
+
+footer .footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 15px;
+}
+
+
+footer .footer-inner .footer-inner-block{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+footer .footer-inner .footer-inner-block .footer-flex-item{
+    margin:20px 0px;
+}
+
+footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul ul{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul ul>li{
+    padding:0;
+    margin:5px 0px;
+}
+
+footer .footer-inner .footer-inner-block .footer-flex-item .footer-ul img{
+    width:30px;
+    height:30px;
+    margin:0px 5px;
+}
+
+
+@media screen and (max-width:590px){
+    footer .footer-inner .footer-inner-block{
+        flex-flow:column wrap;
+    }
+    
+    footer .footer-inner .footer-inner-block .footer-flex-item{
+        margin:5px 0px; 
+    }
+}
