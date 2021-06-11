@@ -1,12 +1,14 @@
+doctype html
 html(lang='en')
     head
-        meta(charset="utf-8")
-        meta(name="viewport" content="width=device-width;initial-scale=1.0;shrink-to-fit=no")
+        include head.pug
         title="Wincent Home Page"
         
-        link(rel="stylesheet" href="universal.css" type="text/css")
     body
     
-        !=topmenu
+        include top-menu.pug
         
-        !=footer
+        
+        
+        
+        include footer.pug
