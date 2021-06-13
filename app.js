@@ -1,11 +1,12 @@
 // IMPORTING THE MODULES  !!!!
 require('dotenv').config({path:'.env'});
 const express = require('express');
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('express-flash');
 const path = require('path');
 const Router = require('./router/index.js');
-const favicon = require('serve-favicon');
 
 
 
@@ -22,6 +23,14 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+//SESSION
+app.use(session({
+    secret:process.env.SESSION_SECRET,
+    saveUninitialized:false,
+    resave:false
+}))
+app.use(flash());
 
 app.use('/',Router);
 

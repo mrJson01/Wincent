@@ -15,4 +15,19 @@ top-menu and footer. Implemented enviromental variables. <br/>
 * pug
 * dotenv
 
+## Development branch
+
+**added modules**
+* express-session
+* express-validator
+* express-flash
+* mysql
+* JEST
+* bcrypt
+
+I used JEST to test mysql based seraching for a email in a database to check if given email <br/>
+is already using by someone else. Express-session needed to use epxress-flash by will also come handy <br/>
+when I will be creating log in to the site. After checking a data sent to server they are inserted to table <br/>
+users in a MYSQL database. In the end user is redirected to the home site with suitable message. <br/>
+Names of a columns in table in none quote .<br/> 
 

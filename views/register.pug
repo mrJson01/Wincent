@@ -6,19 +6,33 @@ html(lang='en')
 
     body
         
+        mixin errors(name)
+            if messages.fail
+                if error = messages.fail.find(error => error.param === name)
+                    span()&attributes(attributes)= error.msg        
+        
         form(action="/register/send" method="POST")
             .figure
                 input(name="firstname" type="text" required)
+                +errors('firstname')(class='error-msg')
             .figure    
                 input(name="lastname" type="text" required)
+                +errors('lastname')(class='error-msg')
             .figure
                 input(name="email" type="email" required)
+                +errors('email')(class='error-msg')
             .figure
                 input(name="password" type="password" required)
+                +errors('password')(class='error-msg')
             .figure
                 input(name="password-verify" type="password" required)
+                +errors('password-verify')(class='error-msg')
             .figure
                 input(name="date-of-birth" type="date" max=new Date().toISOString().split('T')[0] required)
+                +errors('date-of-birth')(class='error-msg')
             
             button(type="submit") Register now
+            
+            if messages.error
+                span(class='error-msg')=messages.error
             

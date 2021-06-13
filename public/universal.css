@@ -66,6 +66,11 @@ h2{
     align-items:center;
 }
 
+.error-msg{
+    color:red;
+    font-family:'Nunito',sans-serif;
+    font-size:10px;
+}
 
 
 /*      Top-menu     */
