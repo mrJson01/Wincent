@@ -41,7 +41,7 @@ exports.registrationEnd = (req,res)=>{
     }
     
     mysql.RegistrationSaveData(queue,values).then(msg =>{
-        req.flash('success',msg);
+        req.flash('success',[{title:'Success',msg:msg}]);
         res.redirect('/');
     }).catch(error=>{
         

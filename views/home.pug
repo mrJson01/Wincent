@@ -9,6 +9,14 @@ html(lang='en')
         include top-menu.pug
             
         if messages.success
-            span= messages.success
+            .feed-back-success
+                .title
+                    h2=messages.success[0]['title']
+                .msg
+                    p=messages.success[0]['msg']
+                .exit.cursor(onclick="this.parentElement.remove()")
+                    img(src="png/cross-sign.png" alt="exit")
         
-        include footer.pug
+               
+        //HAVE TO FIX THE FOOTER
+        //include footer.pug

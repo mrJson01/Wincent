@@ -3,36 +3,55 @@ html(lang='en')
     head
         include head.pug
         title="Wincent Home Page"
+        
+        link(rel="stylesheet" href="register.css" type="text/css")
 
     body
         
         mixin errors(name)
             if messages.fail
                 if error = messages.fail.find(error => error.param === name)
+                    br
                     span()&attributes(attributes)= error.msg        
+        
+        h1="Sign Up"
         
         form(action="/register/send" method="POST")
             .figure
-                input(name="firstname" type="text" required)
-                +errors('firstname')(class='error-msg')
-            .figure    
-                input(name="lastname" type="text" required)
-                +errors('lastname')(class='error-msg')
+                label
+                    ="firstname"
+                    input(name="firstname" type="text" required)
+                    +errors('firstname')(class='error-msg')
             .figure
-                input(name="email" type="email" required)
-                +errors('email')(class='error-msg')
+                label
+                    ="lastname"
+                    input(name="lastname" type="text" required)
+                    +errors('lastname')(class='error-msg')
             .figure
-                input(name="password" type="password" required)
-                +errors('password')(class='error-msg')
+                label
+                    ="email"
+                    input(name="email" type="email" required)
+                    +errors('email')(class='error-msg')
             .figure
-                input(name="password-verify" type="password" required)
-                +errors('password-verify')(class='error-msg')
+                label
+                    ="password"
+                    input(name="password" type="password" required)
+                    +errors('password')(class='error-msg')
             .figure
-                input(name="date-of-birth" type="date" max=new Date().toISOString().split('T')[0] required)
-                +errors('date-of-birth')(class='error-msg')
+                label
+                    ="confirm the password"
+                    input(name="password-verify" type="password" required)
+                    +errors('password-verify')(class='error-msg')
+            .figure
+                label
+                    ="date of your birth"
+                    input(name="date-of-birth" type="date" max=new Date().toISOString().split('T')[0] required)
+                    +errors('date-of-birth')(class='error-msg')
             
-            button(type="submit") Register now
+            #button-block
+                button.cursor(type="submit") Register now
             
             if messages.error
-                span(class='error-msg')=messages.error
-            
+      
+        //HAVE TO FIX FOOTER        
+        //include footer.pug
