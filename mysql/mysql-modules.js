@@ -20,7 +20,7 @@ function checkEmail(email){
                 
                 
             }else{
-                
+                reject('Something went wrong durning process , Sorry :(');
             }
         }); 
     });
@@ -33,11 +33,13 @@ function RegistrationSaveData(queue,values){
     return new Promise((resolve,reject)=>{
         
         Pool.getConnection((error,connection)=>{
-
-            connection.query(`INSERT INTO users (id${queue},dateOfRegister) VALUES(null${values},null)`,(err,result,field)=>{
+            
+            if(error) reject(error);
+            
+            connection.query(`INSERT ITO users (id${queue},dateOfRegister) VALUES(null${values},null)`,(err,result,field)=>{
 
                 if(!err) resolve('Registration ended successfuly');
-                else reject(err);
+                else reject('Something went wrong durning data saving , please try again');
                 
                 connection.release();
 

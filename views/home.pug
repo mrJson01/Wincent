@@ -7,15 +7,11 @@ html(lang='en')
     body
     
         include top-menu.pug
-            
+        
+        include mixins/feed-back.pug
+        
         if messages.success
-            .feed-back-success
-                .title
-                    h2=messages.success[0]['title']
-                .msg
-                    p=messages.success[0]['msg']
-                .exit.cursor(onclick="this.parentElement.remove()")
-                    img(src="png/cross-sign.png" alt="exit")
+            +feed-back-success(messages.success)
         
                
         //HAVE TO FIX THE FOOTER

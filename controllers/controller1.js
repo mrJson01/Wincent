@@ -25,7 +25,7 @@ exports.registrationResult = (req,res,next)=>{
     }
 };
 
-exports.registrationEnd = (req,res)=>{
+exports.registrationEnd = (req,res,next)=>{
     
     let queue = "";
     let values = "";
@@ -46,9 +46,9 @@ exports.registrationEnd = (req,res)=>{
     }).catch(error=>{
         
         // HANDLING ERROR PROPERLY WILL HAVE TO BE ADDED !!!!!!!!!!!!!!!!
+        const err = new Error(error);
+        next(err);
         
-        req.flash('error',error);
-        res.redirect('/register');
     });
     
 };

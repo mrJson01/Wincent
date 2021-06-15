@@ -1,0 +1,8 @@
+mixin feed-back-success(obj)
+    .feed-back-success
+        .title
+            h2=obj[0]['title']
+        .msg
+            p=obj[0]['msg']
+        .exit.cursor(onclick="this.parentElement.remove()")
+            img(src="png/cross-sign.png" alt="exit")

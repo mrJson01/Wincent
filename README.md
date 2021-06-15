@@ -38,3 +38,7 @@ What was made untill now will be merged with master as v0.2(Registaration). <Br/
 * Error handling <br/>
 * Fix footer.pug
 
+## Error Handling
+
+
+

@@ -7,6 +7,7 @@ const session = require('express-session');
 const flash = require('express-flash');
 const path = require('path');
 const Router = require('./router/index.js');
+const errorHandler = require('./error.js');
 
 
 
@@ -33,5 +34,9 @@ app.use(session({
 app.use(flash());
 
 app.use('/',Router);
+
+
+app.use(errorHandler.notFound);
+app.use(errorHandler.catchError);
 
 module.exports = app;
